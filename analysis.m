@@ -23,8 +23,8 @@ C2 = g;
 C3 = (B*Clb)/Ix;
 C4 = B*b^2*Clp/(2*Ix);
 C5 = B*Clr*b^2/(4*Ix);
-C6 = B*Cnr*b^2/(2*Iz);
-C7 = B*Cnp*b^2/(2*Iz);
+C6 = B*Cnp*b^2/(2*Iz);
+C7 = B*Cnr*b^2/(2*Iz);
 
 %% Sistema matricial
 
