@@ -3,32 +3,28 @@ clear; clc
 
 global vinf
 global rho 
-%global sup
+global sup
 global b
-%global c
 global g
 global m
-%global de
 global Ix
-%global Iy
 global Iz
 global Cyb
 global Clb
 global Clp
 global Clr
 global Cnr
-%global Cnp
 
 
 %% Declaracion de variables
-B = 0.5*rho*vinf^2;
+B = 0.5*rho*vinf*sup;
 C1 = (B/m) * (Cyb);
 C2 = g;
-C3 = (B*b*Clb)/(2*Ix);
-C4 = (B*b/Ix)*Clb*(b/(2*vinf));
-C5 = (B*Clr/Ix)*(b/(2*vinf));
-C6 = (B*Cnr/Iz)*(b/(2*vinf));
-C7 = (B*Clp/Iz)*(b/(2*vinf));
+C3 = (B*Clb)/Ix;
+C4 = B*b^2*Clb/(2*Ix);
+C5 = B*Clr*b^2/(4*Ix);
+C6 = B*Cnr*b^2/(2*Iz);
+C7 = B*Clp*b^2/(2*Iz);
 
 %% Sistema matricial
 
@@ -39,4 +35,4 @@ A = [...
      0  , 1  , 0  , 0  ; ...
     ]
 
-[Vec, Val] = eig(A)
+[vec, val] = eig(A)
